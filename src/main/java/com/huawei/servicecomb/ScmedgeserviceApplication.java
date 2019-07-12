@@ -1,13 +1,11 @@
 package com.huawei.servicecomb;
 
-import org.apache.servicecomb.springboot.starter.provider.EnableServiceComb;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.apache.servicecomb.foundation.common.utils.BeanUtils;
+import org.apache.servicecomb.foundation.common.utils.Log4jUtils;
 
-@SpringBootApplication
-@EnableServiceComb
 public class ScmedgeserviceApplication {
-    public static void main(String[] args) {
-         SpringApplication.run(ScmedgeserviceApplication.class,args);
-    }
+	public static void main(String[] args) throws Exception{
+	    Log4jUtils.init();
+	    BeanUtils.init();
+	}
 }

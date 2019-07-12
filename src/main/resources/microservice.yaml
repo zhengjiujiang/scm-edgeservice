@@ -1,28 +1,45 @@
-APPLICATION_ID: springmvc
+APPLICATION_ID: default
 service_description:
   name: scmedgeservice
-  version: 0.0.1
+  version: 0.0.2
   properties:
     allowCrossApp: false
 cse:
   service:
     registry:
-      address: https://cse.cn-east-2.myhuaweicloud.com
+      address: http://127.0.0.1:30100
       instance:
         watch: false
-  config:
-    client:
-      serverUri: https://cse.cn-east-2.myhuaweicloud.com
-      refreshMode: 1
-      refresh_interval: 5000
   #monitor:
     #client:
       #serverUri: https://cse.cn-east-2.myhuaweicloud.com
   rest:
-    address: 0.0.0.0:8080
+    address: 0.0.0.0:18084
   #When a local project is deployed as a container outside a cluster, you need to delete all monitor and credentials comments and configure the AK/SK.
   #credentials:
     #accessKey: ak
     #secretKey: sk
     #akskCustomCipher: default
     #project: cn-east-2
+  http:
+    dispatcher:
+      edge:
+        url:
+          enabled: true
+          mappings:
+            scm-commom:
+              prefixSegmentCount: 1
+              path: "/common/.*"
+              microserviceName: scm-common
+              versionRule: 0.0.1-2.0.0
+            scm-supplier:
+              prefixSegmentCount: 1
+              path: "/supplier/.*"
+              microserviceName: scm-supplier
+              versionRule: 0.0.1-2.0.0
+  cors:
+    enabled: true
+    origin: "*"
+    allowCredentials: false
+    allowedMethod: GET,POST,PUT,DELETE
+    maxAge: 3600
