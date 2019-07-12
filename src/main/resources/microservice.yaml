@@ -27,7 +27,7 @@ cse:
         url:
           enabled: true
           mappings:
-            scm-commom:
+            scm-common:
               prefixSegmentCount: 1
               path: "/scm.common/.*"
               microserviceName: scm-common
