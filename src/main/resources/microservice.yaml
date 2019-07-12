@@ -30,22 +30,22 @@ cse:
             scm-commom:
               prefixSegmentCount: 1
               path: "/scm.common/.*"
-              microserviceName: app-scm-common
+              microserviceName: scm-common
               versionRule: 0.0.1-2.0.0
             scm-supplier:
               prefixSegmentCount: 1
               path: "/scm.supplier/.*"
-              microserviceName: app-scm-supplier
+              microserviceName: scm-supplier
               versionRule: 0.0.1-2.0.0
             scm-tender:
               prefixSegmentCount: 1
               path: "/scm.tender/.*"
-              microserviceName: app-scm-tender
+              microserviceName: scm-tender
               versionRule: 0.0.1-2.0.0
             scm-contract:
               prefixSegmentCount: 1
               path: "/scm.contract/.*"
-              microserviceName: app-scm-contract
+              microserviceName: scm-contract
               versionRule: 0.0.1-2.0.0
   cors:
     enabled: true
