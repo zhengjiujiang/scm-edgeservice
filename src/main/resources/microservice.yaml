@@ -29,13 +29,23 @@ cse:
           mappings:
             scm-commom:
               prefixSegmentCount: 1
-              path: "/common/.*"
-              microserviceName: scm-common
+              path: "/scm.common/.*"
+              microserviceName: app-scm-common
               versionRule: 0.0.1-2.0.0
             scm-supplier:
               prefixSegmentCount: 1
-              path: "/supplier/.*"
-              microserviceName: scm-supplier
+              path: "/scm.supplier/.*"
+              microserviceName: app-scm-supplier
+              versionRule: 0.0.1-2.0.0
+            scm-tender:
+              prefixSegmentCount: 1
+              path: "/scm.tender/.*"
+              microserviceName: app-scm-tender
+              versionRule: 0.0.1-2.0.0
+            scm-contract:
+              prefixSegmentCount: 1
+              path: "/scm.contract/.*"
+              microserviceName: app-scm-contract
               versionRule: 0.0.1-2.0.0
   cors:
     enabled: true
