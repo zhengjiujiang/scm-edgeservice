@@ -50,8 +50,8 @@ cse:
               versionRule: 0.0.1-2.0.0
   cors:
     enabled: true
-    origin: "*"
-    allowCredentials: false
+    origin: "http://lgkrbkxibcvzo8nt.kundeyt.cn-east-2.huaweicse.com"
+    allowCredentials: true
     allowedHeader: "Content-Type,appid,content-type"
     allowedMethod: GET,POST,PUT,DELETE
     maxAge: 3600
