@@ -2,7 +2,7 @@ APPLICATION_ID: default
 service_description:
   name: scmedgeservice
   version: 0.0.2
-  environment: development
+  environment: testing
   properties:
     allowCrossApp: false
 cse:
