@@ -52,6 +52,6 @@ cse:
     enabled: true
     origin: "*"
     allowCredentials: false
-    allowedHeader: "appid"
+    allowedHeader: "Content-Type,appid"
     allowedMethod: GET,POST,PUT,DELETE
     maxAge: 3600
