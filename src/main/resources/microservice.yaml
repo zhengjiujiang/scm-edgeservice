@@ -52,6 +52,6 @@ cse:
     enabled: true
     origin: "http://*.*.kundeyt.cn-east-2.huaweicse.com"
     allowCredentials: true
-    allowedHeader: "Content-Type,appid,content-type"
+    allowedHeader: "Content-Type,appid,content-type,token"
     allowedMethod: GET,POST,PUT,DELETE
     maxAge: 3600
