@@ -50,7 +50,7 @@ cse:
               versionRule: 0.0.1-2.0.0
   cors:
     enabled: true
-    origin: "http://*.*.kundeyt.cn-east-2.huaweicse.com"
+    origin: "http://*.*.kundeyt.com"
     allowCredentials: true
     allowedHeader: "Content-Type,appid,content-type,token"
     allowedMethod: GET,POST,PUT,DELETE
