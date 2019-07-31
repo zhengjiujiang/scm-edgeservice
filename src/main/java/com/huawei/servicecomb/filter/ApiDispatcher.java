@@ -28,10 +28,6 @@ public class ApiDispatcher extends AbstractEdgeDispatcher {
     }
 
     protected void onRequest(RoutingContext context) {
-        Map<String, String> pathParams = context.pathParams();
-        String microserviceName = pathParams.get("param0");
-        String path = "/" + pathParams.get("param1");
-
         EdgeInvocation invoker = new EdgeInvocation() {
             /**
              * @throws Exception
