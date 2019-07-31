@@ -47,7 +47,7 @@ public class ApiDispatcher extends AbstractEdgeDispatcher {
                 }
             }
         };
-        invoker.init(microserviceName, context, path, httpServerFilters);
+        //invoker.init(microserviceName, context, path, httpServerFilters);
         invoker.edgeInvoke();
     }
 }
