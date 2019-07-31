@@ -1,7 +1,7 @@
 APPLICATION_ID: default
 service_description:
   name: scmedgeservice
-  version: 0.0.1
+  version: 0.0.2
   environment: testing
   properties:
     allowCrossApp: false
@@ -50,7 +50,7 @@ cse:
               versionRule: 0.0.1-2.0.0
   cors:
     enabled: true
-    origin: "http://*.kundeyt.com"
+    origin: "http://*.*.kundeyt.com"
     allowCredentials: true
     allowedHeader: "Content-Type,appid,content-type,token"
     allowedMethod: GET,POST,PUT,DELETE
