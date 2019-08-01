@@ -55,3 +55,5 @@ cse:
     allowedHeader: "Content-Type,appid,content-type,token"
     allowedMethod: GET,POST,PUT,DELETE
     maxAge: 3600
+servicecomb.http.dispatcher.edge.default.enabled: false
+servicecomb.http.dispatcher.rest.enabled: false
