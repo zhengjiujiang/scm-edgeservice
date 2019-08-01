@@ -2,7 +2,9 @@ package com.huawei.servicecomb.filter;
 
 import java.util.Map;
 
+import com.netflix.config.DynamicPropertyFactory;
 import org.apache.servicecomb.edge.core.AbstractEdgeDispatcher;
+import org.apache.servicecomb.edge.core.DefaultEdgeDispatcher;
 import org.apache.servicecomb.edge.core.EdgeInvocation;
 
 import io.vertx.ext.web.Cookie;
@@ -22,26 +24,23 @@ import javax.ws.rs.core.Response;
 /**
  * ApiDispatcher
  */
-public class ApiDispatcher extends AbstractEdgeDispatcher {
+public class ApiDispatcher extends DefaultEdgeDispatcher {
     private static final Logger LOGGER = LoggerFactory.getLogger(ApiDispatcher.class);
+    private static final String KEY_ENABLED = "servicecomb.http.dispatcher.edge.api.enabled";
 
     @Override
     public int getOrder() {
-        return 10002;
+        return 11;
+    }
+
+
+
+    @Override
+    public boolean enabled() {
+        return DynamicPropertyFactory.getInstance().getBooleanProperty(KEY_ENABLED, false).get();
     }
 
     @Override
-    public void init(Router router) {
-        String regex = "/";
-        router.routeWithRegex(regex).handler(CookieHandler.create());
-        router.routeWithRegex(regex).handler(createBodyHandler());
-        router.routeWithRegex(regex).failureHandler(this::onFailure).handler(this::onRequest);
-
-//        router.route().handler(this::onRequest);
-    }
-
-
-
     protected void onRequest(RoutingContext context) {
         Map<String, String> pathParams = context.pathParams();
         String microserviceName = pathParams.get("param0");
@@ -64,7 +63,9 @@ public class ApiDispatcher extends AbstractEdgeDispatcher {
             }
         }
 
-        invoker.init(microserviceName, context, path, httpServerFilters);
-        invoker.edgeInvoke();
+        context.request().headers().add("token", token);
+        super.onRequest(context);
+//        invoker.init(microserviceName, context, path, httpServerFilters);
+//        invoker.edgeInvoke();
     }
 }
