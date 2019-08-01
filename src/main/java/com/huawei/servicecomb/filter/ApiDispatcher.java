@@ -21,7 +21,7 @@ public class ApiDispatcher extends AbstractEdgeDispatcher {
 
     @Override
     public void init(Router router) {
-        String regex = "/([^\\/]+)/(.*)";
+        String regex = "/";
         router.routeWithRegex(regex).handler(CookieHandler.create());
         router.routeWithRegex(regex).handler(createBodyHandler());
         router.routeWithRegex(regex).failureHandler(this::onFailure).handler(this::onRequest);
@@ -53,6 +53,7 @@ public class ApiDispatcher extends AbstractEdgeDispatcher {
                 }
             }
         };
+
         invoker.init(microserviceName, context, path, httpServerFilters);
         invoker.edgeInvoke();
     }
