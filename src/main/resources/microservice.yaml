@@ -48,6 +48,11 @@ cse:
               path: "/scm.contract/.*"
               microserviceName: scm-contract
               versionRule: 0.0.1-2.0.0
+            business-center-user:
+              prefixSegmentCount: 1
+              path: "/center.user/.*"
+              microserviceName: business-center-user
+              versionRule: 0.0.1-2.0.0
   cors:
     enabled: true
     origin: "http://*.*.*.*"
